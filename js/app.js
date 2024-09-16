@@ -15,6 +15,11 @@ function adicionar() {
     // Nome e Valor;
     let nomeProdutoSelecionado = produtoSelecionado.split('-')[0];
     let valorProdutoSelecionado = produtoSelecionado.split('R$')[1];
+
+    if(quantidadeProdutos == '') {
+        alert('Insira uma quantidade.');
+        return;
+    }
     // Calcula o subtotal.
     let subTotal = quantidade.value * valorProdutoSelecionado;
 
