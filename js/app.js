@@ -5,6 +5,19 @@ document.getElementById('valor-total').innerHTML =  '';
 // Variável total declarada como 0.
 let total = 0;
 
+function navegacaoPorTeclado() {
+    const inputQtd = document.getElementById('quantidade');
+
+    inputQtd.addEventListener('keydown', (event) => {
+        if(event.key == 'Enter') {
+            event.preventDefault();
+            adicionar();
+        }
+    })
+}
+
+window.onload = navegacaoPorTeclado;
+
 function adicionar() {
 
     // Recupera os produtos, suas quantidades, seus nomes e seus valores, além do subtotal.
@@ -22,7 +35,7 @@ function adicionar() {
     }
     // Calcula o subtotal.
     let subTotal = quantidade.value * valorProdutoSelecionado;
-
+    
 
     // Adiciona os produtos no carrinho.
     listaDeCompras.innerHTML +=
